@@ -3,94 +3,109 @@ import streamlit as st
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="centered")
 
-# --- CUSTOM CSS FOR PREMIUM RESUME THEME (TIMES NEW ROMAN / LIGHT SLATE / NAVY & GOLD) ---
+# --- RECRUITER-PREMIUM LIGHT-SLATE THEME (Times New Roman / Navy / Deep Gray) ---
 st.markdown("""
     <style>
-    /* Professional light slate resume background */
+    /* Premium, soft light-slate background (highly readable, professional) */
     .stApp {
-        background-color: #F8FAFC;
-        font-family: 'Times New Roman', Times, serif !important;
+        background-color: #F1F5F9;
+        color: #1E293B;
     }
     
-    /* Document-style container constraints */
+    /* Strict layout constraints to reduce scrolling and tighten gaps */
     .block-container {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
         max-width: 800px !important;
     }
     
-    /* Typography adjustments to Times New Roman */
+    /* Enforce professional serif font across all elements */
     h1, h2, h3, h4, h5, p, li, span, label, div {
         font-family: 'Times New Roman', Times, serif !important;
     }
     
-    /* Title: Bold Deep Navy */
+    /* Main Name Header - Bold Elegant Navy */
     .main-title {
-        font-size: 38px;
+        font-size: 36px;
         font-weight: bold;
         color: #1E3A8A;
         margin-bottom: 2px;
         text-align: center;
     }
     
-    /* Subtitle: Slate Gray */
+    /* Subtitle - Professional Slate */
     .sub-title {
-        font-size: 18px;
+        font-size: 17px;
         font-style: italic;
         color: #475569;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-align: center;
     }
     
-    /* Section Headers: Navy with Gold/Bronze underline */
+    /* Standardized Section Headers with Clean Underline */
     .section-header {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
         color: #1E3A8A;
-        border-bottom: 2px solid #D97706;
-        padding-bottom: 4px;
-        margin-top: 25px;
-        margin-bottom: 15px;
+        border-bottom: 2px solid #B45309; /* Warm bronze accent line */
+        padding-bottom: 3px;
+        margin-top: 15px;
+        margin-bottom: 10px;
     }
     
-    /* Custom CSS for Power BI-style KPI Number Plates */
+    /* Clean text styling to prevent "invisible text" on light backgrounds */
+    p, li, span {
+        color: #1E293B !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Dark Navy for subheadings so they never blend into the background */
+    h3, .company-name {
+        color: #0F172A !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+        margin-top: 10px !important;
+        margin-bottom: 2px !important;
+    }
+    
+    /* Dynamic KPI scorecard block containers */
     .kpi-container {
         display: flex;
         justify-content: space-between;
-        gap: 15px;
-        margin-bottom: 10px;
+        gap: 12px;
+        margin-top: 10px;
+        margin-bottom: 5px;
     }
     .kpi-card {
         background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-        padding: 15px;
+        border: 1px solid #CBD5E1;
+        border-radius: 6px;
+        padding: 10px;
         text-align: center;
         flex: 1;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .kpi-number {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
         color: #1E3A8A;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
     }
     .kpi-label {
-        font-size: 13px;
+        font-size: 12px;
         color: #475569;
         font-weight: bold;
     }
     
-    /* Standard Text & Bullets: Dark Charcoal for crisp reading */
-    p, li {
-        color: #1E293B !important;
-        font-size: 15.5px !important;
-        line-height: 1.6 !important;
+    /* Tighten gap spacing around Streamlit widgets */
+    .stSelectbox {
+        margin-bottom: 5px !important;
     }
     
-    /* Custom links */
+    /* Hyperlink formatting */
     a {
-        color: #2563EB !important;
+        color: #1D4ED8 !important;
         text-decoration: none;
         font-weight: bold;
     }
@@ -104,27 +119,51 @@ st.markdown("""
 st.markdown('<div class="main-title">Prathamesh Sontakke</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Project & Client Delivery Professional | Implementation Specialist</div>', unsafe_allow_html=True)
 
-# Contact Details: Organized into 2 Clean Rows
-row1_col1, row1_col2 = st.columns(2)
-with row1_col1:
+# Tight Contact Layout: Row 1 (Core Info), Row 2 (Profiles)
+col_c1, col_c2 = st.columns(2)
+with col_c1:
     st.markdown("<p style='text-align: center; margin:0;'>📞 <b>+91 8208484319</b></p>", unsafe_allow_html=True)
-with row1_col2:
+with col_c2:
     st.markdown("<p style='text-align: center; margin:0;'>📧 <b>sontakkeprathamesh10@gmail.com</b></p>", unsafe_allow_html=True)
 
-st.write("") # Micro spacer
+col_p1, col_p2 = st.columns(2)
+with col_p1:
+    st.markdown("<p style='text-align: center; margin:0; margin-top: 4px;'>🔗 <b><a href='https://www.linkedin.com/in/prathamesh-sontakke-1920bb247/' target='_blank'>LinkedIn Profile</a></b></p>", unsafe_allow_html=True)
+with col_p2:
+    st.markdown("<p style='text-align: center; margin:0; margin-top: 4px;'>💼 <b><a href='https://www.naukri.com/mnjuser/profile' target='_blank'>Naukri Profile</a></b></p>", unsafe_allow_html=True)
 
-row2_col1, row2_col2 = st.columns(2)
-with row2_col1:
-    st.markdown("<p style='text-align: center; margin:0;'>🔗 <b><a href='https://www.linkedin.com/in/prathamesh-sontakke-1920bb247/' target='_blank'>LinkedIn Profile</a></b></p>", unsafe_allow_html=True)
-with row2_col2:
-    st.markdown("<p style='text-align: center; margin:0;'>💼 <b><a href='https://www.naukri.com/mnjuser/profile' target='_blank'>Naukri Profile</a></b></p>", unsafe_allow_html=True)
+st.write("") # Micro divider spacing
 
-st.write("")
+# --- 1. HOW I CAN HELP YOUR TEAM (NOW AT THE TOP) ---
+st.markdown('<div class="section-header">How I Can Help Your Team</div>', unsafe_allow_html=True)
+role_interest = st.selectbox(
+    "Select your team's objective to see my tailored alignment:",
+    ["Implementation & Client Delivery", "Project Coordinator / Scrum Master", "Product / Business Analyst"]
+)
 
-# --- KEY MILESTONES (POWER BI DASHBOARD CARDS) ---
+if role_interest == "Implementation & Client Delivery":
+    st.info(
+        "💡 **Tailored Alignment:** I specialize in taking enterprise customers from kickoff to go-live. "
+        "With my experience managing LIMS implementations, configuring fields via JSON to mirror real-world laboratory setups, "
+        "and running software walkthroughs, I ensure a smooth, high-retention onboarding journey."
+    )
+elif role_interest == "Project Coordinator / Scrum Master":
+    st.info(
+        "💡 **Tailored Alignment:** I focus on structure, timeline fidelity, and risk mitigation. "
+        "I'm skilled in mapping milestones, using JIRA and Confluence to track active deliverables, and "
+        "facilitating daily alignment across engineering and operations teams to resolve blockages early."
+    )
+else:
+    st.info(
+        "💡 **Tailored Alignment:** I act as an operational translator. I map complex user flows, write "
+        "functional specifications, analyze onboarding bottlenecks using Power BI, and assist with pre-sales demos. "
+        "My active Product Management training with NextLeap keeps me highly grounded in user-focused problem-solving."
+    )
+
+# --- 2. KEY MILESTONES (BELOW PITCH) ---
 st.markdown('<div class="section-header">Key Delivery Milestones</div>', unsafe_allow_html=True)
 
-# Render HTML KPI Cards
+# Render Power BI style KPI scorecards
 st.markdown("""
 <div class="kpi-container">
     <div class="kpi-card">
@@ -148,7 +187,7 @@ st.markdown("""
 
 st.caption("*Note: These milestones were achieved during my tenure at Krishagni Solutions.*")
 
-# --- CORE COMPETENCIES (SKILLS HIGHER UP) ---
+# --- 3. CORE COMPETENCIES ---
 st.markdown('<div class="section-header">Core Competencies</div>', unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["📊 Project & Delivery", "🔄 Agile & Execution", "💻 Tech & Data"])
@@ -174,37 +213,11 @@ with tab3:
     * **System Adaptation:** Hands-on experience configuring workflows for Enterprise Laboratory Information Systems (LIMS).
     """)
 
-# --- INTERACTIVE ROLE FIT SWITCHER ---
-st.markdown('<div class="section-header">How I Can Help Your Team</div>', unsafe_allow_html=True)
-role_interest = st.selectbox(
-    "Select your hiring target to view tailored experience alignments:",
-    ["Implementation & Client Delivery", "Project Coordinator / Scrum Master", "Product / Business Analyst"]
-)
-
-if role_interest == "Implementation & Client Delivery":
-    st.info(
-        "💡 **Tailored Alignment:** I specialize in taking enterprise customers from kickoff to go-live. "
-        "With my experience managing LIMS implementations, configuring fields via JSON to mirror real-world laboratory setups, "
-        "and running software walkthroughs, I ensure a smooth, high-retention onboarding journey."
-    )
-elif role_interest == "Project Coordinator / Scrum Master":
-    st.info(
-        "💡 **Tailored Alignment:** I focus on structure, timeline fidelity, and risk mitigation. "
-        "I'm skilled in mapping milestones, using JIRA and Confluence to track active deliverables, and "
-        "facilitating daily alignment across engineering and operations teams to resolve blockages early."
-    )
-else:
-    st.info(
-        "💡 **Tailored Alignment:** I act as an operational translator. I map complex user flows, write "
-        "functional specifications, analyze onboarding bottlenecks using Power BI, and assist with pre-sales demos. "
-        "My active Product Management training with NextLeap keeps me highly grounded in user-focused problem-solving."
-    )
-
-# --- WORK EXPERIENCE ---
+# --- 4. WORK EXPERIENCE (BOLDED COMPANY NAMES & CORRECTED INVISIBLE TEXT) ---
 st.markdown('<div class="section-header">Professional Journey</div>', unsafe_allow_html=True)
 
 # Krishagni Solutions
-st.subheader("Krishagni Solutions")
+st.markdown("<div class='company-name'>Krishagni Solutions</div>", unsafe_allow_html=True)
 st.markdown("*Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present*")
 
 st.markdown("""
@@ -229,10 +242,10 @@ with cs_col2:
         "https://www.openspecimen.org/case-studies/indiana-university-genetics-biobank-modernises-global-biobank-operations-with-openspecimen/"
     )
 
-st.write("") # Spacer
+st.write("") # Tiny spacer
 
 # Urban Company
-st.subheader("Urban Company")
+st.markdown("<div class='company-name'>Urban Company</div>", unsafe_allow_html=True)
 st.markdown("*Business Operations & Analyst Associate | December 2024 – April 2025 (3 Months)*")
 
 st.markdown("""
@@ -240,41 +253,41 @@ st.markdown("""
 - **Capacity Planning:** Executed demand-supply forecasting models across multiple service subcategories to optimize partner availability.
 """)
 
-# --- PROTOTYPES & NEXTLEAP WORK ---
+# --- 5. PROTOTYPES & NEXTLEAP WORK (REDUCED GAP & CORRECTED HEADER COLOR) ---
 st.markdown('<div class="section-header">Featured Projects & Prototyping</div>', unsafe_allow_html=True)
 st.caption("Active builds and public learning case studies published during my NextLeap PM Fellowship:")
 
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
-    st.markdown("### **Groww Pro Terminal**")
-    st.markdown("Built an interactive portal to solve mutual fund research and IPO tracking complexities for everyday investors.")
-    st.markdown("[👉 View Project on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_buildinpublic-learninpublic-nextleap-ugcPost-7459264687650557952-a9dJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
+    st.markdown("<h4 style='color:#0F172A !important; margin:0;'>Groww Pro Terminal</h4>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px !important; margin-top:5px;'>Built an interactive portal to solve mutual fund research and IPO tracking complexities for everyday investors.</p>", unsafe_allow_html=True)
+    st.markdown("[👉 View on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_buildinpublic-learninpublic-nextleap-ugcPost-7459264687650557952-a9dJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
 
 with p_col2:
-    st.markdown("### **Unlocking Voice Search**")
-    st.markdown("Conducted structured user research analyzing the core mechanics, barriers, and preferences of ChatGPT voice search.")
-    st.markdown("[👉 View Research on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_unlocking-voice-search-ugcPost-7451698697589063680-73My?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
+    st.markdown("<h4 style='color:#0F172A !important; margin:0;'>Unlocking Voice</h4>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px !important; margin-top:5px;'>Conducted structured user research analyzing the core mechanics, barriers, and preferences of ChatGPT voice search.</p>", unsafe_allow_html=True)
+    st.markdown("[👉 View on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_unlocking-voice-search-ugcPost-7451698697589063680-73My?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
 
 with p_col3:
-    st.markdown("### **Make.com Teardown**")
-    st.markdown("Analyzed onboarding flows on Make.com, detailing friction points and proposing intuitive user retention loops.")
-    st.markdown("[👉 View Teardown on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_product-teardown-makecom-onboarding-ugcPost-7454208030000427008-IQUQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
+    st.markdown("<h4 style='color:#0F172A !important; margin:0;'>Make.com Teardown</h4>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size:14px !important; margin-top:5px;'>Analyzed onboarding flows on Make.com, detailing friction points and proposing intuitive user retention loops.</p>", unsafe_allow_html=True)
+    st.markdown("[👉 View on LinkedIn](https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_product-teardown-makecom-onboarding-ugcPost-7454208030000427008-IQUQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk)")
 
-# --- EDUCATION & CERTIFICATIONS ---
+# --- 6. EDUCATION & CERTIFICATIONS ---
 st.markdown('<div class="section-header">Education & Certifications</div>', unsafe_allow_html=True)
 
 col_edu1, col_edu2 = st.columns(2)
 with col_edu1:
-    st.subheader("Upskilling")
+    st.markdown("<div class='company-name'>Upskilling</div>", unsafe_allow_html=True)
     st.markdown("**Product Management Fellowship**")
     st.caption("NextLeap | Expected July 2026")
-    st.markdown("**McKinsey Forward Learning Program**")
+    st.markdown("**McKinsey Forward Program**")
     st.caption("Leadership & Structured Problem Solving | 2025")
     st.markdown("**Youth Employment Program**")
     st.caption("TCS | 2022")
 with col_edu2:
-    st.subheader("Academics")
+    st.markdown("<div class='company-name'>Academics</div>", unsafe_allow_html=True)
     st.markdown("**M.Sc. in Biotechnology**")
     st.caption("Nagpur University (7.84 CGPA) | 2024")
     st.markdown("**B.Sc. in Biotechnology**")
