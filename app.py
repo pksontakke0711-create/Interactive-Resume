@@ -3,78 +3,49 @@ import streamlit as st
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="centered")
 
-# --- CUSTOM CSS FOR CLEAN LOOK ---
-st.markdown("""
-    <style>
-    .main-title {
-        font-size: 38px;
-        font-weight: 700;
-        color: #1E3A8A;
-        margin-bottom: 5px;
-    }
-    .sub-title {
-        font-size: 20px;
-        font-weight: 500;
-        color: #4B5563;
-        margin-bottom: 25px;
-    }
-    .section-header {
-        font-size: 24px;
-        font-weight: 600;
-        color: #1E3A8A;
-        border-bottom: 2px solid #E5E7EB;
-        padding-bottom: 5px;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-    .highlight {
-        font-weight: 600;
-        color: #2563EB;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+# --- HEADER SECTION (Using native Streamlit formatting for perfect Dark/Light mode scaling) ---
+st.title("Prathamesh Sontakke")
+st.subheader("Project & Client Delivery Professional | Implementation Specialist")
 
-# --- HEADER SECTION ---
-st.markdown('<div class="main-title">Prathamesh Sontakke</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-title">Project & Client Delivery Professional | Implementation Specialist</div>', unsafe_allow_html=True)
-
-# Contact Information in 3 Columns
+# Contact Information in 3 Columns with emojis
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.write("📱 (+91) 8208484319")
+    st.markdown("📞 **(+91) 8208484319**")
 with col2:
-    st.write("📧 [SontakkePrathamesh10@gmail.com](mailto:SontakkePrathamesh10@gmail.com)")
+    st.markdown("📧 **[SontakkePrathamesh10@gmail.com](mailto:SontakkePrathamesh10@gmail.com)**")
 with col3:
-    st.write("🔗 [LinkedIn Profile](https://www.linkedin.com/in/prathamesh-sontakke/)") # Replace with your actual LinkedIn link path if needed
+    st.markdown("🔗 **[LinkedIn Profile](https://www.linkedin.com/in/prathamesh-sontakke/)**")
 
-st.markdown("---")
+st.divider()
 
 # --- IMPACT NUMBERS (METRICS BIAS) ---
-st.markdown('<div class="section-header">Key Delivery Milestones</div>', unsafe_allow_header=True)
+st.header("Key Delivery Milestones")
 m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 with m_col1:
     st.metric(label="Global Projects", value="20+")
 with m_col2:
     st.metric(label="RFPs Supported", value="15+")
 with m_col3:
-    st.metric(label="Webinars Led", value="5+")
+    st.metric(label="Webinars Coordinated", value="5+")
 with m_col4:
     st.metric(label="Tier-1 Accounts", value="1 (Cambridge)")
 
+st.divider()
+
 # --- INTERACTIVE ROLE FIT SWITCHER ---
-st.markdown('<div class="section-header">Understand My Value (Select Your Team)</div>', unsafe_allow_html=True)
+st.header("Understand My Value")
 role_interest = st.selectbox(
-    "Are you hiring for a...",
-    ["Implementation & Client Delivery Role", "Project Coordinator / Scrum Master Role", "Product / Business Analyst Role"]
+    "Select your team's focus to see how I fit your requirement:",
+    ["Implementation & Client Delivery", "Project Coordinator / Scrum Master", "Product / Business Analyst"]
 )
 
-if role_interest == "Implementation & Client Delivery Role":
+if role_interest == "Implementation & Client Delivery":
     st.info(
         "💡 **Why I fit:** I specialize in taking a client from 'contract signed' to 'fully onboarded'. "
         "With my experience managing LIMS implementations, configuring system fields via JSON to match real-world workflows, "
         "and running software training demos, I ensure high client retention and zero-friction rollouts."
     )
-elif role_interest == "Project Coordinator / Scrum Master Role":
+elif role_interest == "Project Coordinator / Scrum Master":
     st.info(
         "💡 **Why I fit:** I focus on structure and timeline execution. I'm skilled in Agile methodologies (Scrum/Kanban), "
         "tracking deliverables using JIRA/Confluence, and facilitating cross-functional alignment between engineering "
@@ -87,12 +58,14 @@ else:
         "Fellowship at NextLeap keeps me highly grounded in user-centric problem solving."
     )
 
+st.divider()
+
 # --- WORK EXPERIENCE ---
-st.markdown('<div class="section-header">Professional Journey</div>', unsafe_allow_html=True)
+st.header("Professional Journey")
 
 # Company 1: Krishagni (Primary Focus)
-st.markdown("### **Krishagni Solutions**")
-st.caption("Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present")
+st.subheader("Krishagni Solutions")
+st.markdown("*Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present*")
 
 st.markdown("""
 - **Implementation Lead — University of Cambridge Project:** Spearheaded end-to-end LIMS software implementation and biobanking workflow configurations; managed key stakeholder communications and performed functional JSON updates to customize system attributes.
@@ -102,18 +75,20 @@ st.markdown("""
 """)
 
 # Company 2: Urban Company
-st.markdown("### **Urban Company**")
-st.caption("Business Operations & Analyst Associate | Dec 2024 – April 2025 (3 Months)")
+st.subheader("Urban Company")
+st.markdown("*Business Operations & Analyst Associate | Dec 2024 – April 2025 (3 Months)*")
 
 st.markdown("""
 - **Operational Efficiency:** Built interactive Power BI tracking dashboards to analyze partner onboarding trends and resolve workflow bottlenecks.
 - **Capacity Planning:** Executed demand-supply forecasting models across multiple service subcategories to optimize partner availability.
 """)
 
-# --- INTERACTIVE SKILLS TABS ---
-st.markdown('<div class="section-header">Core Competencies</div>', unsafe_allow_html=True)
+st.divider()
 
-tab1, tab2, tab3 = st.tabs(["Project & Delivery", "Agile & Execution", "Tech & Data"])
+# --- INTERACTIVE SKILLS TABS ---
+st.header("Core Competencies")
+
+tab1, tab2, tab3 = st.tabs(["📊 Project & Delivery", "🔄 Agile & Execution", "💻 Tech & Data"])
 
 with tab1:
     st.write("✔️ **Stakeholder Coordination:** Managing expectation alignment between technical developers and non-technical clients.")
@@ -130,22 +105,24 @@ with tab3:
     st.write("✔️ **Data Visualization:** Power BI (creating clean operation dashboards) and MS Excel.")
     st.write("✔️ **Active Upskilling:** Applying product-thinking frameworks through the **NextLeap PM Fellowship**.")
 
+st.divider()
+
 # --- NEXTLEAP FELLOWSHIP & ACADEMICS ---
-st.markdown('<div class="section-header">Education & Professional Development</div>', unsafe_allow_html=True)
+st.header("Education & Development")
 
 col_edu1, col_edu2 = st.columns(2)
 with col_edu1:
-    st.markdown("##### **Upskilling Initiatives**")
-    st.write("🎓 **Product Management Fellowship**")
+    st.subheader("Upskilling")
+    st.markdown("**Product Management Fellowship**")
     st.caption("NextLeap | Expected July 2026")
-    st.write("💼 **McKinsey Forward Learning Program**")
+    st.markdown("**McKinsey Forward Learning Program**")
     st.caption("Leadership & Structured Problem Solving | 2025")
 with col_edu2:
-    st.markdown("##### **Academics**")
-    st.write("🔬 **M.Sc. in Biotechnology**")
+    st.subheader("Academics")
+    st.markdown("**M.Sc. in Biotechnology**")
     st.caption("Nagpur University (7.84 CGPA) | 2024")
-    st.write("🧬 **B.Sc. in Biotechnology**")
+    st.markdown("**B.Sc. in Biotechnology**")
     st.caption("Kamla Nehru Mahavidyalaya (72.22%) | 2022")
 
-st.markdown("---")
-st.write("💡 *This interactive resume was custom-built by Prathamesh using Python and Streamlit.*")
+st.divider()
+st.caption("💡 *This interactive resume was built using Python & Streamlit.*")
