@@ -22,7 +22,7 @@ st.divider()
 st.header("Key Delivery Milestones")
 m_col1, m_col2, m_col3, m_col4 = st.columns(4)
 with m_col1:
-    st.metric(label="Global Projects", value="20+")
+    st.metric(label="Global Projects", value="3")
 with m_col2:
     st.metric(label="RFPs Supported", value="15+")
 with m_col3:
