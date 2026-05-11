@@ -3,7 +3,7 @@ import streamlit as st
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="centered")
 
-# --- ULTIMATE RECRUITER-PREMIUM LIGHT THEME WITH BALANCED MARGINS ---
+# --- ULTIMATE RECRUITER-PREMIUM LIGHT THEME WITH STABILIZED CONTROLS ---
 st.markdown("""
     <style>
     /* Premium, soft light slate-gray background */
@@ -14,8 +14,8 @@ st.markdown("""
     
     /* Document-style layout constraints with balanced top and bottom padding */
     .block-container {
-        padding-top: 3.5rem !important;
-        padding-bottom: 5rem !important;
+        padding-top: 4.5rem !important; /* Elegant top border padding */
+        padding-bottom: 6rem !important; /* Elegant bottom margin protection */
         max-width: 800px !important;
     }
     
@@ -29,7 +29,7 @@ st.markdown("""
         font-size: 38px;
         font-weight: bold;
         color: #1E3A8A;
-        margin-top: 40px !important;
+        margin-top: 30px !important;
         margin-bottom: 5px;
         text-align: center;
     }
@@ -38,9 +38,10 @@ st.markdown("""
     .sub-title {
         font-size: 18px;
         font-style: italic;
-        color: #334155;
+        color: #1E293B;
         margin-bottom: 25px;
         text-align: center;
+        font-weight: bold;
     }
     
     /* Perfectly spaced Contact Container */
@@ -91,6 +92,15 @@ st.markdown("""
         margin-bottom: 4px !important;
     }
     
+    /* Date and location headers - Clean, dark, and readable */
+    .date-location {
+        font-size: 15px !important;
+        font-style: italic;
+        color: #1E293B !important;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
     /* Interactive Cards: Soft-Blue Theme applied globally to panels */
     .blue-panel {
         background-color: #EFF6FF !important;
@@ -99,6 +109,16 @@ st.markdown("""
         padding: 18px;
         margin-top: 10px;
         margin-bottom: 15px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Standardized Educational / Up-skilling Cards to preserve structural uniformity */
+    .equal-card {
+        background-color: #EFF6FF !important;
+        border: 1px solid #DBEAFE !important;
+        border-radius: 8px;
+        padding: 18px;
+        min-height: 250px; /* Force identical container heights across columns */
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
@@ -163,11 +183,43 @@ st.markdown("""
     a:hover {
         text-decoration: underline;
     }
+
+    /* -------------------------------------------------------------
+       CRITICAL DROPDOWN FIXES: OVERRIDING STREAMLIT DEFAULT POPUPS 
+       ------------------------------------------------------------- */
+    /* Selectbox base styles */
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important;
+        border-color: #CBD5E1 !important;
+    }
+    /* Selectbox raw values */
+    div[data-baseweb="select"] span, div[data-baseweb="select"] div {
+        color: #0F172A !important;
+        font-weight: bold !important;
+    }
+    /* Selectbox list dropdown container popover */
+    div[role="listbox"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
+    }
+    /* Selectbox dropdown individual list elements */
+    div[role="option"] {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        border-bottom: 1px solid #F1F5F9 !important;
+    }
+    /* Highlight state during hover selection */
+    div[role="option"]:hover, div[role="option"][aria-selected="true"] {
+        background-color: #EFF6FF !important;
+        color: #1E3A8A !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
 # --- HEADER SECTION WITH SAFE SPACE FROM THE TOP ---
-st.write("") # Initial spacing layer
+st.write("") # Baseline alignment protection
 st.markdown('<div class="main-title">Prathamesh Sontakke</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Project & Client Delivery Professional | Implementation Specialist</div>', unsafe_allow_html=True)
 
@@ -176,7 +228,7 @@ st.markdown("""
 <div class="contact-container">
     <div class="contact-row">
         <span>📞 +91 8208484319</span>
-        <span>📧 sontakkeprathamesh10@gmail.com</span>
+        <span>📧 SontakkePrathamesh10@gmail.com</span>
     </div>
     <div class="contact-row">
         <span>🔗 <a href="https://www.linkedin.com/in/prathamesh-sontakke-1920bb247/" target="_blank">LinkedIn Profile</a></span>
@@ -242,7 +294,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.caption("*Note: These milestones were achieved during my tenure at Krishagni Solutions.*")
+st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; color:#1E293B;'>*Note: These milestones were achieved during my tenure at Krishagni Solutions.*</p>", unsafe_allow_html=True)
 
 
 # --- 3. CORE COMPETENCIES (TABBED BLUE PANELS) ---
@@ -289,7 +341,7 @@ st.markdown('<div class="section-header">Professional Journey</div>', unsafe_all
 
 # Krishagni Solutions
 st.markdown("<div class='company-title'>Krishagni Solutions</div>", unsafe_allow_html=True)
-st.markdown("*Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present*")
+st.markdown("<div class='date-location'>Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present</div>", unsafe_allow_html=True)
 
 st.markdown("""
 - <span class="bullet-bold">Implementation Lead — University of Cambridge Project:</span> Spearheaded end-to-end software deployment, managed stakeholder communication, and updated configuration schemas using JSON to mirror exact user workflows.
@@ -310,7 +362,7 @@ st.markdown("""
 
 # Urban Company
 st.markdown("<div class='company-title'>Urban Company</div>", unsafe_allow_html=True)
-st.markdown("*Business Operations & Analyst Associate | December 2024 – April 2025*")
+st.markdown("<div class='date-location'>Business Operations & Analyst Associate | December 2024 – April 2025</div>", unsafe_allow_html=True)
 
 st.markdown("""
 - <span class="bullet-bold">Operational Efficiency:</span> Built customized Power BI dashboards to track onboarding trends across 3+ service subcategories, boosting visibility for category leadership.
@@ -330,7 +382,7 @@ with p_col1:
     st.markdown("""
     <div class="blue-panel" style="min-height: 250px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Groww Pro Terminal</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
             Configured an interactive terminal mapping retail investment complexities (MF research and IPO logs) to simplify user discovery.
         </p>
         <div style="margin-top:15px;">
@@ -343,7 +395,7 @@ with p_col2:
     st.markdown("""
     <div class="blue-panel" style="min-height: 250px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Unlocking Voice</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
             Designed and analyzed user research tracking voice-feature friction barriers and behavioral triggers on ChatGPT.
         </p>
         <div style="margin-top:15px;">
@@ -356,7 +408,7 @@ with p_col3:
     st.markdown("""
     <div class="blue-panel" style="min-height: 250px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Make.com Teardown</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
             A product teardown dissecting Make.com's user onboarding sequence, outlining friction points and retention mechanics.
         </p>
         <div style="margin-top:15px;">
@@ -366,29 +418,44 @@ with p_col3:
     """, unsafe_allow_html=True)
 
 
-# --- 6. EDUCATION & CERTIFICATIONS ---
-st.markdown('<div class="section-header">Education & Certifications</div>', unsafe_allow_html=True)
+# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS) ---
+st.markdown('<div class="section-header">Education & Up-skilling</div>', unsafe_allow_html=True)
 
 edu_col1, edu_col2 = st.columns(2)
 
 with edu_col1:
-    st.markdown("<div class='company-title'>Academics</div>", unsafe_allow_html=True)
-    st.markdown("**M.Sc. in Biotechnology**")
-    st.caption("Nagpur University (7.84 CGPA) | 2022 - 2024")
-    st.markdown("**B.Sc. in Biotechnology**")
-    st.caption("Kamla Nehru Mahavidyalaya (72.22%) | 2019 - 2022")
+    st.markdown("""
+    <div class="equal-card">
+        <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Academics</div>
+        <div style="margin-top:10px;">
+            <strong style="color: #0F172A;">M.Sc. in Biotechnology</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Nagpur University (7.84 CGPA) | 2022 - 2024</span>
+        </div>
+        <div style="margin-top:15px;">
+            <strong style="color: #0F172A;">B.Sc. in Biotechnology</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Kamla Nehru Mahavidyalaya (72.22%) | 2019 - 2022</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with edu_col2:
-    st.markdown("<div class='company-title'>Up-skilling Programs</div>", unsafe_allow_html=True)
     st.markdown("""
-    <div class="blue-panel" style="padding: 12px; margin-top:5px;">
-        <ul>
-            <li style="font-size:14px !important;"><strong>Product Management Fellowship</strong><br>NextLeap | Expected July 2026</li>
-            <li style="font-size:14px !important; margin-top: 5px;"><strong>McKinsey Forward Program</strong><br>Structured Problem Solving | 2025</li>
-            <li style="font-size:14px !important; margin-top: 5px;"><strong>Youth Employment Program</strong><br>TCS Graduate Academy | 2022</li>
-        </ul>
+    <div class="equal-card">
+        <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Up-skilling Programs</div>
+        <div style="margin-top:10px;">
+            <strong style="color: #0F172A;">Product Management Fellowship</strong>
+            <br><span style="font-size:14px; color:#1E293B;">NextLeap | Expected July 2026</span>
+        </div>
+        <div style="margin-top:12px;">
+            <strong style="color: #0F172A;">McKinsey Forward Program</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Structured Problem Solving | 2025</span>
+        </div>
+        <div style="margin-top:12px;">
+            <strong style="color: #0F172A;">Youth Employment Program</strong>
+            <br><span style="font-size:14px; color:#1E293B;">TCS Graduate Academy | 2022</span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
 st.divider()
-st.caption("💡 *This interactive web-resume is live, responsive, and styled using Streamlit.*")
+st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; text-align:center; color:#1E293B;'>💼 This interactive resume is optimized, fully tested, and formatted for recruiters.</p>", unsafe_allow_html=True)
