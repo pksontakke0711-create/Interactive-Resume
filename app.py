@@ -3,7 +3,7 @@ import streamlit as st
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="centered")
 
-# --- ULTIMATE RECRUITER-PREMIUM LIGHT THEME WITH STABILIZED CONTROLS ---
+# --- RECRUITER-PREMIUM LIGHT THEME WITH STABILIZED CONTROLS ---
 st.markdown("""
     <style>
     /* Premium, soft light slate-gray background */
@@ -112,10 +112,10 @@ st.markdown("""
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
-    /* Standardized Educational / Up-skilling Cards to preserve structural uniformity */
-    .equal-card {
-        background-color: #EFF6FF !important;
-        border: 1px solid #DBEAFE !important;
+    /* Clean Border-Only Cards strictly for Education to match height without blue bg */
+    .border-only-card {
+        background-color: #FFFFFF !important;
+        border: 1px solid #CBD5E1 !important;
         border-radius: 8px;
         padding: 18px;
         min-height: 250px; /* Force identical container heights across columns */
@@ -185,33 +185,37 @@ st.markdown("""
     }
 
     /* -------------------------------------------------------------
-       CRITICAL DROPDOWN FIXES: OVERRIDING STREAMLIT DEFAULT POPUPS 
+       GLOBAL STREAMLIT WIDGET PORTAL SELECTBOX OVERRIDES
+       Forces white backgrounds and dark text on active elements
        ------------------------------------------------------------- */
-    /* Selectbox base styles */
+    /* Target the container wrapper directly */
     div[data-baseweb="select"] > div {
         background-color: #FFFFFF !important;
         border-color: #CBD5E1 !important;
     }
-    /* Selectbox raw values */
-    div[data-baseweb="select"] span, div[data-baseweb="select"] div {
+    /* Set selection value text to black */
+    div[data-baseweb="select"] * {
         color: #0F172A !important;
         font-weight: bold !important;
     }
-    /* Selectbox list dropdown container popover */
-    div[role="listbox"] {
+    
+    /* FORCE GLOBAL DROPDOWN PORTAL BODY (LISTBOX) STYLE OVERRIDES */
+    div[role="listbox"], ul[role="listbox"] {
         background-color: #FFFFFF !important;
         border: 1px solid #CBD5E1 !important;
     }
-    /* Selectbox dropdown individual list elements */
-    div[role="option"] {
+    /* Target option menu items */
+    li[role="option"], div[role="option"] {
         background-color: #FFFFFF !important;
         color: #0F172A !important;
         font-weight: bold !important;
-        padding: 10px !important;
+        font-family: 'Times New Roman', Times, serif !important;
+        padding: 10px 14px !important;
         border-bottom: 1px solid #F1F5F9 !important;
     }
-    /* Highlight state during hover selection */
-    div[role="option"]:hover, div[role="option"][aria-selected="true"] {
+    /* Highlight states on hover and selected status */
+    li[role="option"]:hover, div[role="option"]:hover, 
+    li[role="option"][aria-selected="true"], div[role="option"][aria-selected="true"] {
         background-color: #EFF6FF !important;
         color: #1E3A8A !important;
     }
@@ -418,14 +422,14 @@ with p_col3:
     """, unsafe_allow_html=True)
 
 
-# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS) ---
+# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS - STRIPPED OF BLUE BG) ---
 st.markdown('<div class="section-header">Education & Up-skilling</div>', unsafe_allow_html=True)
 
 edu_col1, edu_col2 = st.columns(2)
 
 with edu_col1:
     st.markdown("""
-    <div class="equal-card">
+    <div class="border-only-card">
         <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Academics</div>
         <div style="margin-top:10px;">
             <strong style="color: #0F172A;">M.Sc. in Biotechnology</strong>
@@ -440,7 +444,7 @@ with edu_col1:
 
 with edu_col2:
     st.markdown("""
-    <div class="equal-card">
+    <div class="border-only-card">
         <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Up-skilling Programs</div>
         <div style="margin-top:10px;">
             <strong style="color: #0F172A;">Product Management Fellowship</strong>
