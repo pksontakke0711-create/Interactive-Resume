@@ -1,76 +1,76 @@
 import streamlit as st
 
-# --- PAGE CONFIG ---
-st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="centered")
+# --- PAGE CONFIG (SWITCHED TO WIDE LAYOUT) ---
+st.set_page_config(page_title="Prathamesh Sontakke | Portfolio", page_icon="💼", layout="wide")
 
-# --- RECRUITER-PREMIUM LIGHT THEME WITH STABILIZED CONTROLS ---
+# --- RECRUITER-PREMIUM FULL-WIDTH LIGHT THEME ---
 st.markdown("""
     <style>
-    /* Premium, soft light slate-gray background */
+    /* Soft light slate-gray background */
     .stApp {
         background-color: #F8FAFC;
         color: #1E293B;
     }
     
-    /* Document-style layout constraints with balanced top and bottom padding */
+    /* Expanded container for wide-screen readability layout */
     .block-container {
-        padding-top: 4.5rem !important; /* Elegant top border padding */
-        padding-bottom: 6rem !important; /* Elegant bottom margin protection */
-        max-width: 800px !important;
+        padding-top: 3rem !important;
+        padding-bottom: 5rem !important;
+        max-width: 1350px !important;
+        margin: 0 auto !important;
     }
     
-    /* Global Serif Font Rule */
+    /* Global Serif Font Rule for clean document styling */
     h1, h2, h3, h4, h5, p, li, span, label, div {
         font-family: 'Times New Roman', Times, serif !important;
     }
     
-    /* Main Title with a fixed, elegant top margin gap */
+    /* Main Title with crisp deep blue text */
     .main-title {
-        font-size: 38px;
+        font-size: 42px;
         font-weight: bold;
         color: #1E3A8A;
-        margin-top: 30px !important;
         margin-bottom: 5px;
         text-align: center;
     }
     
     /* Elegant italicized subtitle */
     .sub-title {
-        font-size: 18px;
+        font-size: 20px;
         font-style: italic;
-        color: #1E293B;
+        color: #334155;
         margin-bottom: 25px;
         text-align: center;
         font-weight: bold;
     }
     
-    /* Perfectly spaced Contact Container */
+    /* Flat Contact Container Grid */
     .contact-container {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
     .contact-row {
         display: flex;
         justify-content: center;
-        gap: 35px;
-        margin-bottom: 8px;
-        font-size: 16px !important;
+        gap: 40px;
+        margin-bottom: 10px;
+        font-size: 17px !important;
         font-weight: bold;
         color: #0F172A !important;
     }
     
     /* Standardized Section Headers with Gold/Bronze Accent Line */
     .section-header {
-        font-size: 21px;
+        font-size: 24px;
         font-weight: bold;
         color: #1E3A8A;
         border-bottom: 2px solid #D97706; 
-        padding-bottom: 5px;
-        margin-top: 35px;
-        margin-bottom: 15px;
+        padding-bottom: 6px;
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
     
-    /* High-contrast Bullet points and standard text styling */
+    /* High-contrast text styling */
     p, li {
         color: #1E293B !important;
         font-size: 16px !important;
@@ -83,33 +83,32 @@ st.markdown("""
         color: #0F172A;
     }
     
-    /* Subheading styling for companies */
+    /* Subheading styling for roles and companies */
     .company-title {
-        font-size: 20px;
+        font-size: 21px;
         font-weight: bold;
         color: #0F172A !important;
         margin-top: 15px !important;
         margin-bottom: 4px !important;
     }
     
-    /* Date and location headers - Clean, dark, and readable */
+    /* Date and location headers */
     .date-location {
         font-size: 15px !important;
         font-style: italic;
-        color: #1E293B !important;
+        color: #475569 !important;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     
-    /* Interactive Cards: Soft-Blue Theme applied globally to panels */
-    .blue-panel {
+    /* Recruiter Soft-Blue Grid Panels (Flat Visibility) */
+    .blue-panel-flat {
         background-color: #EFF6FF !important;
         border: 1px solid #DBEAFE !important;
         border-radius: 8px;
-        padding: 18px;
-        margin-top: 10px;
-        margin-bottom: 15px;
+        padding: 20px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        height: 100%; /* Make panels take exact same height in horizontal row */
     }
     
     /* Clean Border-Only Cards strictly for Education to match height without blue bg */
@@ -117,36 +116,36 @@ st.markdown("""
         background-color: #FFFFFF !important;
         border: 1px solid #CBD5E1 !important;
         border-radius: 8px;
-        padding: 18px;
-        min-height: 250px; /* Force identical container heights across columns */
+        padding: 20px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        height: 100%;
     }
     
     /* KPI Card styling (Power BI Dashboard Numbers) */
     .kpi-container {
         display: flex;
         justify-content: space-between;
-        gap: 12px;
+        gap: 16px;
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     .kpi-card {
         background-color: #FFFFFF;
         border: 1px solid #E2E8F0;
         border-radius: 8px;
-        padding: 12px;
+        padding: 15px;
         text-align: center;
         flex: 1;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     }
     .kpi-number {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: bold;
         color: #1E3A8A;
         margin-bottom: 2px;
     }
     .kpi-label {
-        font-size: 12px;
+        font-size: 13px;
         color: #0F172A;
         font-weight: bold;
     }
@@ -160,13 +159,12 @@ st.markdown("""
         font-size: 14.5px;
         text-align: center;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 10px 22px;
         border-radius: 6px;
         border: none;
         margin-right: 15px;
         margin-top: 10px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: background-color 0.2s ease-in-out;
     }
     .btn-case-study:hover {
         background-color: #1D4ED8 !important;
@@ -183,51 +181,14 @@ st.markdown("""
     a:hover {
         text-decoration: underline;
     }
-
-    /* -------------------------------------------------------------
-       GLOBAL STREAMLIT WIDGET PORTAL SELECTBOX OVERRIDES
-       Forces white backgrounds and dark text on active elements
-       ------------------------------------------------------------- */
-    /* Target the container wrapper directly */
-    div[data-baseweb="select"] > div {
-        background-color: #FFFFFF !important;
-        border-color: #CBD5E1 !important;
-    }
-    /* Set selection value text to black */
-    div[data-baseweb="select"] * {
-        color: #0F172A !important;
-        font-weight: bold !important;
-    }
-    
-    /* FORCE GLOBAL DROPDOWN PORTAL BODY (LISTBOX) STYLE OVERRIDES */
-    div[role="listbox"], ul[role="listbox"] {
-        background-color: #FFFFFF !important;
-        border: 1px solid #CBD5E1 !important;
-    }
-    /* Target option menu items */
-    li[role="option"], div[role="option"] {
-        background-color: #FFFFFF !important;
-        color: #0F172A !important;
-        font-weight: bold !important;
-        font-family: 'Times New Roman', Times, serif !important;
-        padding: 10px 14px !important;
-        border-bottom: 1px solid #F1F5F9 !important;
-    }
-    /* Highlight states on hover and selected status */
-    li[role="option"]:hover, div[role="option"]:hover, 
-    li[role="option"][aria-selected="true"], div[role="option"][aria-selected="true"] {
-        background-color: #EFF6FF !important;
-        color: #1E3A8A !important;
-    }
     </style>
     """, unsafe_allow_html=True)
 
-# --- HEADER SECTION WITH SAFE SPACE FROM THE TOP ---
-st.write("") # Baseline alignment protection
+# --- HEADER SECTION ---
 st.markdown('<div class="main-title">Prathamesh Sontakke</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Project & Client Delivery Professional | Implementation Specialist</div>', unsafe_allow_html=True)
 
-# Contact Details Grid: Two Clean Rows with strict spacing
+# Contact Details Row (Flat Grid layout)
 st.markdown("""
 <div class="contact-container">
     <div class="contact-row">
@@ -241,34 +202,42 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# --- 1. HOW I CAN HELP YOUR TEAM ---
-st.markdown('<div class="section-header">How I Can Help Your Team</div>', unsafe_allow_html=True)
-role_interest = st.selectbox(
-    "Select your hiring goal to see my tailored alignment:",
-    ["Implementation & Client Delivery", "Project Coordinator / Scrum Master", "Product / Business Analyst"]
-)
 
-if role_interest == "Implementation & Client Delivery":
+# --- 1. HOW I CAN HELP YOUR TEAM (FLAT HORIZONTAL GRID) ---
+st.markdown('<div class="section-header">How I Can Help Your Team</div>', unsafe_allow_html=True)
+
+help_col1, help_col2, help_col3 = st.columns(3)
+
+with help_col1:
     st.markdown("""
-    <div class="blue-panel">
-        <strong>💡 Implementation & Onboarding Lead:</strong> I specialize in bringing enterprise customers from kickoff to go-live. 
-        With my experience managing complex LIMS setups, executing custom JSON configurations, and guiding 20+ healthcare SaaS onboarding 
-        journeys, I ensure structured, low-friction integration.
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">🔄 Implementation & Client Delivery</h4>
+        <p style="font-size:14.5px !important; margin-top:8px;">
+            <strong>Implementation & Onboarding Lead:</strong> I specialize in bringing enterprise customers from kickoff to go-live. 
+            With my experience managing complex LIMS setups, executing custom JSON configurations, and guiding 20+ healthcare SaaS onboarding journeys, I ensure structured, low-friction integration.
+        </p>
     </div>
     """, unsafe_allow_html=True)
-elif role_interest == "Project Coordinator / Scrum Master":
+
+with help_col2:
     st.markdown("""
-    <div class="blue-panel">
-        <strong>💡 Structure & Sprint Delivery:</strong> I focus on timeline execution and risk mitigation. I bring solid hands-on experience 
-        mapping milestones, leveraging JIRA and Confluence to track epics and deliverables, and facilitating clear cross-functional communication 
-        to bypass operational bottlenecks.
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📅 Project Coordinator / Scrum Master</h4>
+        <p style="font-size:14.5px !important; margin-top:8px;">
+            <strong>Structure & Sprint Delivery:</strong> I focus on timeline execution and risk mitigation. I bring solid hands-on experience 
+            mapping milestones, leveraging JIRA and Confluence to track epics and deliverables, and facilitating clear cross-functional communication to bypass operational bottlenecks.
+        </p>
     </div>
     """, unsafe_allow_html=True)
-else:
+
+with help_col3:
     st.markdown("""
-    <div class="blue-panel">
-        <strong>💡 Operational Translator:</strong> I map complex user flows, draft functional specifications, coordinate client requirement gathering, 
-        and translate technical requirements cleanly. My analytical background with Power BI enables me to build data-backed project health dashboards.
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📊 Product / Business Analyst</h4>
+        <p style="font-size:14.5px !important; margin-top:8px;">
+            <strong>Operational Translator:</strong> I map complex user flows, draft functional specifications, coordinate client requirement gathering, 
+            and translate technical requirements cleanly. My analytical background with Power BI enables me to build data-backed project health dashboards.
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -276,7 +245,6 @@ else:
 # --- 2. KEY DELIVERY MILESTONES ---
 st.markdown('<div class="section-header">Key Delivery Milestones</div>', unsafe_allow_html=True)
 
-# Render Power BI style KPI scorecards
 st.markdown("""
 <div class="kpi-container">
     <div class="kpi-card">
@@ -298,18 +266,19 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; color:#1E293B;'>*Note: These milestones were achieved during my tenure at Krishagni Solutions.*</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; color:#475569;'>*Note: These milestones were achieved during my tenure at Krishagni Solutions.*</p>", unsafe_allow_html=True)
 
 
-# --- 3. CORE COMPETENCIES (TABBED BLUE PANELS) ---
+# --- 3. CORE COMPETENCIES (FLAT HORIZONTAL GRID) ---
 st.markdown('<div class="section-header">Core Competencies</div>', unsafe_allow_html=True)
 
-tab1, tab2, tab3 = st.tabs(["📊 Project & Delivery", "🔄 Agile & Execution", "💻 Tech & Data"])
+comp_col1, comp_col2, comp_col3 = st.columns(3)
 
-with tab1:
+with comp_col1:
     st.markdown("""
-    <div class="blue-panel">
-        <ul>
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📋 Project & Delivery</h4>
+        <ul style="margin-top:10px; padding-left:20px;">
             <li><strong>Stakeholder Coordination:</strong> Aligning expectations between technical developers and global client teams.</li>
             <li><strong>Requirement Gathering:</strong> Translating intricate customer biobanking setups into clear system parameters.</li>
             <li><strong>Pre-Sales Timelines:</strong> Supporting leadership with service scopes, timelines, and technical responses for RFPs.</li>
@@ -317,21 +286,23 @@ with tab1:
     </div>
     """, unsafe_allow_html=True)
 
-with tab2:
+with comp_col2:
     st.markdown("""
-    <div class="blue-panel">
-        <ul>
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">🔄 Agile & Execution</h4>
+        <ul style="margin-top:10px; padding-left:20px;">
             <li><strong>Agile Execution:</strong> Practical workflow tracking using Scrum and Kanban structures.</li>
-            <li><strong>Project Management Tools:</strong> Solid daily usage of JIRA and Confluence for progress logs and specifications.</li>
+            <li><strong>Project Tools:</strong> Solid daily usage of JIRA and Confluence for progress logs and specifications.</li>
             <li><strong>Process Mapping:</strong> Designing functional process flows using BPMN standards and UML frameworks.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
 
-with tab3:
+with comp_col3:
     st.markdown("""
-    <div class="blue-panel">
-        <ul>
+    <div class="blue-panel-flat">
+        <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">💻 Tech & Data</h4>
+        <ul style="margin-top:10px; padding-left:20px;">
             <li><strong>JSON Configurations:</strong> Performing functional JSON schema updates to adapt software properties.</li>
             <li><strong>Data & Analytics:</strong> Visualizing metrics using Power BI dashboards and Excel.</li>
             <li><strong>System Adaptation:</strong> Customizing laboratory information workflows for enterprise clients.</li>
@@ -355,10 +326,9 @@ st.markdown("""
 - <span class="bullet-bold">Strategy & Growth Support:</span> Partnered with leadership to draft and coordinate customer adoption case studies and launched <span class="bullet-bold">5+ public webinars</span>.
 """, unsafe_allow_html=True)
 
-# CSS Custom Case Study Buttons (High Contrast & Clickable)
 st.markdown("##### **🔗 Published Case Studies I Authored & Supported:**")
 st.markdown("""
-<div style="margin-bottom: 25px;">
+<div style="margin-bottom: 30px;">
     <a class="btn-case-study" href="https://www.openspecimen.org/case-studies/targetals-lims-implementation/" target="_blank">📄 TargetALS Case Study</a>
     <a class="btn-case-study" href="https://www.openspecimen.org/case-studies/indiana-university-genetics-biobank-modernises-global-biobank-operations-with-openspecimen/" target="_blank">📄 Indiana University Case Study</a>
 </div>
@@ -379,14 +349,13 @@ st.markdown("""
 st.markdown('<div class="section-header">Featured Projects & Prototyping</div>', unsafe_allow_html=True)
 st.caption("Active builds and public case studies published during my NextLeap PM Fellowship:")
 
-# Three Equal Height Custom Blue Cards
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
     st.markdown("""
-    <div class="blue-panel" style="min-height: 250px;">
+    <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Groww Pro Terminal</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             Configured an interactive terminal mapping retail investment complexities (MF research and IPO logs) to simplify user discovery.
         </p>
         <div style="margin-top:15px;">
@@ -397,9 +366,9 @@ with p_col1:
 
 with p_col2:
     st.markdown("""
-    <div class="blue-panel" style="min-height: 250px;">
+    <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Unlocking Voice</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             Designed and analyzed user research tracking voice-feature friction barriers and behavioral triggers on ChatGPT.
         </p>
         <div style="margin-top:15px;">
@@ -410,9 +379,9 @@ with p_col2:
 
 with p_col3:
     st.markdown("""
-    <div class="blue-panel" style="min-height: 250px;">
+    <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Make.com Teardown</h4>
-        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important; color: #1E293B !important;">
+        <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             A product teardown dissecting Make.com's user onboarding sequence, outlining friction points and retention mechanics.
         </p>
         <div style="margin-top:15px;">
@@ -422,7 +391,7 @@ with p_col3:
     """, unsafe_allow_html=True)
 
 
-# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS - STRIPPED OF BLUE BG) ---
+# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS - BORDER ONLY) ---
 st.markdown('<div class="section-header">Education & Up-skilling</div>', unsafe_allow_html=True)
 
 edu_col1, edu_col2 = st.columns(2)
@@ -462,4 +431,4 @@ with edu_col2:
     """, unsafe_allow_html=True)
 
 st.divider()
-st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; text-align:center; color:#1E293B;'>💼 This interactive resume is optimized, fully tested, and formatted for recruiters.</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; text-align:center; color:#1E293B;'>💼 This interactive resume is optimized, wide-screen responsive, and formatted specifically for technical recruiters.</p>", unsafe_allow_html=True)
