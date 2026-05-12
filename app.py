@@ -16,7 +16,9 @@ st.markdown("""
     .block-container {
         padding-top: 1.5rem !important;
         padding-bottom: 3rem !important;
-        max-width: 1350px !important;
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+        max-width: 1200px !important;
         margin: 0 auto !important;
     }
     
@@ -109,7 +111,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 16px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        min-height: 205px; /* Visual grid bounds across columns */
+        min-height: 205px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
