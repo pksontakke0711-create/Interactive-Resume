@@ -101,14 +101,17 @@ st.markdown("""
         margin-bottom: 12px;
     }
     
-    /* Recruiter Soft-Blue Grid Panels (Flat Visibility) */
+    /* Recruiter Soft-Blue Grid Panels with Strict Uniform Heights */
     .blue-panel-flat {
         background-color: #EFF6FF !important;
         border: 1px solid #DBEAFE !important;
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        height: 100%; /* Make panels take exact same height in horizontal row */
+        min-height: 230px; /* Forces identical visual grid bounds across columns */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
     
     /* Clean Border-Only Cards strictly for Education to match height without blue bg */
@@ -118,7 +121,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        height: 100%;
+        min-height: 190px;
     }
     
     /* KPI Card styling (Power BI Dashboard Numbers) */
@@ -210,7 +213,7 @@ help_col1, help_col2, help_col3 = st.columns(3)
 
 with help_col1:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 210px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">🔄 Implementation & Client Delivery</h4>
         <p style="font-size:14.5px !important; margin-top:8px;">
             <strong>Implementation & Onboarding Lead:</strong> I specialize in bringing enterprise customers from kickoff to go-live. 
@@ -221,7 +224,7 @@ with help_col1:
 
 with help_col2:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 210px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📅 Project Coordinator / Scrum Master</h4>
         <p style="font-size:14.5px !important; margin-top:8px;">
             <strong>Structure & Sprint Delivery:</strong> I focus on timeline execution and risk mitigation. I bring solid hands-on experience 
@@ -232,7 +235,7 @@ with help_col2:
 
 with help_col3:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 210px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📊 Product / Business Analyst</h4>
         <p style="font-size:14.5px !important; margin-top:8px;">
             <strong>Operational Translator:</strong> I map complex user flows, draft functional specifications, coordinate client requirement gathering, 
@@ -269,7 +272,7 @@ st.markdown("""
 st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; color:#475569;'>*Note: These milestones were achieved during my tenure at Krishagni Solutions.*</p>", unsafe_allow_html=True)
 
 
-# --- 3. CORE COMPETENCIES (FLAT HORIZONTAL GRID) ---
+# --- 3. CORE COMPETENCIES (EQUALIZED HEIGHT PANEL GRID) ---
 st.markdown('<div class="section-header">Core Competencies</div>', unsafe_allow_html=True)
 
 comp_col1, comp_col2, comp_col3 = st.columns(3)
@@ -278,7 +281,7 @@ with comp_col1:
     st.markdown("""
     <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">📋 Project & Delivery</h4>
-        <ul style="margin-top:10px; padding-left:20px;">
+        <ul style="margin-top:10px; padding-left:20px; font-size:14.5px !important;">
             <li><strong>Stakeholder Coordination:</strong> Aligning expectations between technical developers and global client teams.</li>
             <li><strong>Requirement Gathering:</strong> Translating intricate customer biobanking setups into clear system parameters.</li>
             <li><strong>Pre-Sales Timelines:</strong> Supporting leadership with service scopes, timelines, and technical responses for RFPs.</li>
@@ -290,7 +293,7 @@ with comp_col2:
     st.markdown("""
     <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">🔄 Agile & Execution</h4>
-        <ul style="margin-top:10px; padding-left:20px;">
+        <ul style="margin-top:10px; padding-left:20px; font-size:14.5px !important;">
             <li><strong>Agile Execution:</strong> Practical workflow tracking using Scrum and Kanban structures.</li>
             <li><strong>Project Tools:</strong> Solid daily usage of JIRA and Confluence for progress logs and specifications.</li>
             <li><strong>Process Mapping:</strong> Designing functional process flows using BPMN standards and UML frameworks.</li>
@@ -302,7 +305,7 @@ with comp_col3:
     st.markdown("""
     <div class="blue-panel-flat">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:18px; font-weight:bold;">💻 Tech & Data</h4>
-        <ul style="margin-top:10px; padding-left:20px;">
+        <ul style="margin-top:10px; padding-left:20px; font-size:14.5px !important;">
             <li><strong>JSON Configurations:</strong> Performing functional JSON schema updates to adapt software properties.</li>
             <li><strong>Data & Analytics:</strong> Visualizing metrics using Power BI dashboards and Excel.</li>
             <li><strong>System Adaptation:</strong> Customizing laboratory information workflows for enterprise clients.</li>
@@ -353,12 +356,12 @@ p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 160px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Groww Pro Terminal</h4>
         <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             Configured an interactive terminal mapping retail investment complexities (MF research and IPO logs) to simplify user discovery.
         </p>
-        <div style="margin-top:15px;">
+        <div style="margin-top:auto; padding-top:10px;">
             <a href="https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_buildinpublic-learninpublic-nextleap-ugcPost-7459264687650557952-a9dJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk" target="_blank">👉 View Post</a>
         </div>
     </div>
@@ -366,12 +369,12 @@ with p_col1:
 
 with p_col2:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 160px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Unlocking Voice</h4>
         <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             Designed and analyzed user research tracking voice-feature friction barriers and behavioral triggers on ChatGPT.
         </p>
-        <div style="margin-top:15px;">
+        <div style="margin-top:auto; padding-top:10px;">
             <a href="https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_unlocking-voice-search-ugcPost-7451698697589063680-73My?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk" target="_blank">👉 View Research</a>
         </div>
     </div>
@@ -379,19 +382,19 @@ with p_col2:
 
 with p_col3:
     st.markdown("""
-    <div class="blue-panel-flat">
+    <div class="blue-panel-flat" style="min-height: 160px;">
         <h4 style="color:#1E3A8A !important; margin-top:0; font-size:17px; font-weight:bold;">Make.com Teardown</h4>
         <p style="font-size:14px !important; margin-top:5px; line-height: 1.4 !important;">
             A product teardown dissecting Make.com's user onboarding sequence, outlining friction points and retention mechanics.
         </p>
-        <div style="margin-top:15px;">
+        <div style="margin-top:auto; padding-top:10px;">
             <a href="https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_product-teardown-makecom-onboarding-ugcPost-7454208030000427008-IQUQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk" target="_blank">👉 View Teardown</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
 
-# --- 6. EDUCATION & UP-SKILLING (EQUALIZED HEIGHT CARDS - BORDER ONLY) ---
+# --- 6. EDUCATION & UP-SKILLING ---
 st.markdown('<div class="section-header">Education & Up-skilling</div>', unsafe_allow_html=True)
 
 edu_col1, edu_col2 = st.columns(2)
@@ -429,6 +432,3 @@ with edu_col2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-st.divider()
-st.markdown("<p style='font-size:14px !important; font-style:italic; font-weight:bold; text-align:center; color:#1E293B;'>💼 This interactive resume is optimized, wide-screen responsive, and formatted specifically for technical recruiters.</p>", unsafe_allow_html=True)
