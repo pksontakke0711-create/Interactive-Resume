@@ -12,14 +12,13 @@ st.markdown("""
         color: #1E293B;
     }
     
-    /* Expanded container for wide-screen readability layout */
+    /* Guaranteed safety margins to prevent any text from clipping or touching the screen edges */
     .block-container {
-        padding-top: 1.5rem !important;
+        padding-top: 2rem !important;
         padding-bottom: 3rem !important;
-        padding-left: 5rem !important;
-        padding-right: 5rem !important;
-        max-width: 1200px !important;
-        margin: 0 auto !important;
+        margin-left: 6% !important;
+        margin-right: 6% !important;
+        max-width: 88% !important;
     }
     
     /* Global Serif Font Rule for clean document styling */
@@ -34,6 +33,7 @@ st.markdown("""
         color: #1E3A8A;
         margin-bottom: 2px;
         text-align: center;
+        width: 100%;
     }
     
     /* Elegant italicized subtitle */
@@ -44,12 +44,14 @@ st.markdown("""
         margin-bottom: 12px;
         text-align: center;
         font-weight: bold;
+        width: 100%;
     }
     
     /* Single Line Contact Row with tight margins */
     .contact-container {
         text-align: center;
         margin-bottom: 20px;
+        width: 100%;
     }
     .contact-row-single {
         display: flex;
@@ -433,5 +435,3 @@ with edu_col2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-st.markdown("<p style='font-size:13px !important; font-style:italic; text-align:center; color:#475569; margin-top:30px;'>💼 This interactive resume is optimized, wide-screen responsive, and formatted specifically for technical recruiters.</p>", unsafe_allow_html=True)
