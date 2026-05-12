@@ -322,7 +322,7 @@ st.markdown("<div class='company-title'>Krishagni Solutions</div>", unsafe_allow
 st.markdown("<div class='date-location'>Member of Domain Staff (Project & Delivery Operations) | April 2025 – Present</div>", unsafe_allow_html=True)
 
 st.markdown("""
-- <span class="bullet-bold">Implementation Lead — University of Cambridge Project:</span> Spearheaded end-to-end software deployment, managed stakeholder communication, and updated configuration schemas using JSON to mirror exact user workflows.
+- <span class="bullet-bold">Implementation Lead — University of Cambridge Project:</span> Managed end-to-end software deployment, managed stakeholder communication, and updated configuration schemas using JSON to mirror exact user workflows.
 - <span class="bullet-bold">SaaS Delivery:</span> Led requirements gathering and client onboarding for <span class="bullet-bold">20+ global healthcare SaaS projects</span> across US, UK, and Australian research cohorts.
 - <span class="bullet-bold">Pre-Sales Enablement:</span> Facilitated <span class="bullet-bold">20+ customized product demonstrations</span> and drafted technical content for <span class="bullet-bold">15+ RFPs and RFQs</span>.
 - <span class="bullet-bold">Social Media & Engagement (SME):</span> Managed the company's social media presence by consistently publishing relevant biobanking industry insights on the official website and LinkedIn channels.
