@@ -387,4 +387,49 @@ with p_col3:
             A product teardown dissecting Make.com's user onboarding sequence, outlining friction points and retention mechanics.
         </p>
         <div style="margin-top:auto; padding-top:8px;">
-            <a href="
+            <a href="https://www.linkedin.com/posts/prathamesh-sontakke-1920bb247_product-teardown-makecom-onboarding-ugcPost-7454208030000427008-IQUQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0Ptj4BmfSH22CaGLF6AtYLQsHYiMek9Gk" target="_blank">👉 View Teardown</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# --- 6. EDUCATION & UP-SKILLING ---
+st.markdown('<div class="section-header">Education & Up-skilling</div>', unsafe_allow_html=True)
+
+edu_col1, edu_col2 = st.columns(2)
+
+with edu_col1:
+    st.markdown("""
+    <div class="border-only-card" style="min-height: 175px;">
+        <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Academics</div>
+        <div style="margin-top:8px;">
+            <strong style="color: #0F172A;">M.Sc. in Biotechnology</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Nagpur University (7.84 CGPA) | 2022 - 2024</span>
+        </div>
+        <div style="margin-top:10px;">
+            <strong style="color: #0F172A;">B.Sc. in Biotechnology</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Kamla Nehru Mahavidyalaya (72.22%) | 2019 - 2022</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with edu_col2:
+    st.markdown("""
+    <div class="border-only-card" style="min-height: 175px;">
+        <div class="company-title" style="margin-top:0 !important; color:#1E3A8A !important;">Up-skilling Programs</div>
+        <div style="margin-top:8px;">
+            <strong style="color: #0F172A;">Product Management Fellowship</strong>
+            <br><span style="font-size:14px; color:#1E293B;">NextLeap | Expected July 2026</span>
+        </div>
+        <div style="margin-top:8px;">
+            <strong style="color: #0F172A;">McKinsey Forward Program</strong>
+            <br><span style="font-size:14px; color:#1E293B;">Structured Problem Solving | 2025</span>
+        </div>
+        <div style="margin-top:8px;">
+            <strong style="color: #0F172A;">Youth Employment Program</strong>
+            <br><span style="font-size:14px; color:#1E293B;">TCS Graduate Academy | 2022</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("<p style='font-size:13px !important; font-style:italic; text-align:center; color:#475569; margin-top:30px;'>💼 This interactive resume is optimized, wide-screen responsive, and formatted specifically for technical recruiters.</p>", unsafe_allow_html=True)
